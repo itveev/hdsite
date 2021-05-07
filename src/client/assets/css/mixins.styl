@@ -1,0 +1,50 @@
+link($color, $plain = false)
+  &:link
+  &:visited
+    appearance: none
+    outline: none
+    cursor: pointer
+    color: $color
+    border: none
+    background: transparent
+    if $plain
+      text-decoration: none
+    else
+      text-decoration: underline
+  &:hover
+  &:focus
+  &:active
+    if $plain
+      color: darken($color, 10%)
+    else
+      text-decoration: none
+
+button($color, $lighten = null)
+  border-color: $colorcol
+  background-color: $color
+  &:hover
+  &:focus
+  &:active
+    if $lighten == null
+      border-color: darken($color, 5%)
+      background-color: darken($color, 5%)
+    else
+      border-color: rgba($color, 0.95)
+      background-color: rgba($color, 0.95)
+  &[disabled]
+    cursor: not-allowed
+    opacity: .85
+    &:hover
+    &:active
+    &:visited
+      border-color: $color
+      background-color: $color
+
+list-nostyle()
+  list-style: none
+  padding-left: 0
+
+list-inline()
+  list-nostyle()
+  li
+    display: inline-block

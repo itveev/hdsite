@@ -1,0 +1,16 @@
+.DS_Store
+node_modules/
+tmp/
+src/client/assets/build/
+# src/client/assets/css/*.styl
+# src/client/assets/img/
+# src/client/assets/js/
+package-lock.json
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln

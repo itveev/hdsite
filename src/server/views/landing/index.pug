@@ -1,0 +1,143 @@
+doctype html
+html
+	head
+		title YouDesk | Ticket Support System
+		meta(charset="utf-8")
+		link(href="https://fonts.googleapis.com/css?family=Roboto:700,500,400,300&subset=latin,cyrillic"
+			rel="stylesheet"
+			type="text/css")
+		link(href="https://fonts.googleapis.com/css?family=Syncopate:400"
+			rel="stylesheet")
+		link(href="css/landing.css"
+			rel="stylesheet"
+			type="text/css")
+	body
+		div(id=sid.ridLand)
+		header.header
+			.container
+				.row
+					.col-3.brand
+						a(href="#") YouDesk
+					.col-6.col-skip-3.text-right
+						a.btn.btn-link(href="#") Features
+						a.btn.btn-link(href="#") Preview
+						a.btn.btn-link(href="#") Pricing
+						a.btn.btn-link(href=urls.login) Log in
+						a.btn.btn-inverted(href=urls.signup) Sign up
+		.workspace
+			.wrapper.intro
+				.container
+					.row
+						.col-5
+							img(src="img/app.png")
+						.col-6.col-skip-1.middle-col
+							h2 24/7 support for your users
+							p.font-h5 YouDesk delivers relevant help to your users, precisely where and when it's needed.
+							a.btn.btn-inverted.margin-top(href=urls.signup) Sign up
+			.container.text-center.padding-lg
+				h3.margin-btm-lg All you need to provide better support
+				.row.modules
+					.col-4
+						.icon.icon-glyph.icon-tickets.margin-top-lg
+						p.font-h4 Handy ticket management
+						p A ticket element, within an issue tracking system, is a running report on a particular problem, its status, and other relevant data.
+					.col-4
+						.icon.icon-glyph.icon-kb.margin-top-lg
+						p.font-h4 Easy to use knowledge&nbsp;base
+						p A knowledge base is a technology used to store complex structured and unstructured information used by a computer system.
+					.col-4
+						.icon.icon-glyph.icon-dashboard.margin-top-lg
+						p.font-h4 Detailed reports&nbsp;&&nbsp;statistics
+						p A report is an informational work made with the specific intention of relaying information in a widely presentable form.
+			.wrapper.widget-preview
+				.container.text-center.padding-lg
+					h3.margin-btm-lg Preview YouDesk widget on your website
+					form.form
+						ul.controls-list.inline-list
+							li
+								input.input-inverted(type="text" placeholder="http://example.com")
+							li
+								a.btn(href="#") Preview
+			.wrapper.features
+				.container.text-center.padding-lg
+					h3.margin-btm-lg Full of features yet lightweight
+					.row
+						.col-3
+							ul
+								li Multiple input channels
+								li Reports & statistics
+								li Direct messages for agents
+								li Advanced search
+						.col-3
+							ul
+								li Tagging system
+								li Multiple projects
+								li Macros and auto replies
+								li Roles & departments
+						.col-3
+							ul
+								li Ticket filtering
+								li Tasks & automation
+								li Permission control
+								li API
+						.col-3
+							ul
+								li Customization & branding
+								li Multi-lingual interface
+								li Integrations
+								li ... and more!
+					.row
+						.col-6.col-skip-3
+							h5 Sign up now and discover all features
+							a.btn.margin-top(href=urls.signup) Sign up
+			.wrapper.pricing
+				.container.text-center.padding-lg
+					h3.margin-btm-lg Pricing plans
+					.row
+						.col-4.col-skip-4
+							h1
+								span $
+								|0
+							p agent / month
+							h4 Yes, it's free
+							p.text-disabled All features included
+							a.btn.btn-inverted.margin-top(href=urls.signup) Sign up
+		footer.footer
+			.wrapper
+				.container
+					.row
+						.col-2
+							h5 Product
+							ul.nostyle
+								li
+									a(href="#") Features
+								li
+									a(href="#") Preview
+								li
+									a(href="#") Pricing
+								li
+									a(href="#") Sign up
+								li
+									a(href="#") Log in
+						.col-2.col-skip-1
+							h5 Support
+							ul.nostyle
+								li 
+									a(href="#") Product help
+								li 
+									a(href="#") Developers
+								li 
+									a(href="#") Contact us
+						.col-2.col-skip-1
+							a.icon.icon-glyph.icon-fb(href="#") 
+							a.icon.icon-glyph.icon-in(href="#")
+							a.icon.icon-glyph.icon-gp(href="#") 
+			.wrapper
+				.container
+					.row
+						.col-4
+							p.text-disabled &copy; 2019 YouDesk, Inc.
+						.col-4.col-skip-4.text-right
+							p
+								a(href="#") Privacy policy
+								a(href="#") Terms & conditions

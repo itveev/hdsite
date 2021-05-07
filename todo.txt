@@ -1,0 +1,563 @@
+  TODO: Full list
+------------------
+  Igor
+  - Синхронизировать профиль через задержку data-vv-delay,
+  а не по событию change
+
+  - All css should be split for its component
+  
+  * try to dynamically create and add vue instance on page
+
+  * Monitoring application
+
+  * Watch and try to find memory leaks
+
+  ? config prod environment, should not use babel-node on prod.
+
+  * Think about how to use Vue.config.silent and Vue.config.devTools
+
+  * think about correct displaying html content like comments ( v-html dangerous
+    because it can easily lead to XSS attacks, use with trusted content )
+
+  * Test window.onerror logging
+
+  * Test Vue.config.errorHandler
+
+  * test error logging on server and think about file size and logger config
+
+  * View server and client code on correct error logging, refactor
+
+  * if service unavailable for this moment for some org it should be display
+
+  ? All modules with callback should be in right format ( client)
+
+  * add server http req file logging on prod. Look at morgan in app.js
+
+  * move all string variables in config file
+
+  * When render view(jade) use title for key words.
+
+    ** What we should use for key words.
+
+  ? Create common schema for loading users in different vue components
+  Need to implement one time loading for whole page
+
+  * Add time zone and lang to profile and sync to server
+
+  * Implement progress bar on picture uploading without percent
+
+  * Implement progress bar on uploading attachment
+
+  * See awersome vue
+
+  * According to update Vue should see vue-loader on linting and testing
+
+  * Look at async loading component
+
+  * For transition and animation we can use Animate.css and Velocity.js
+
+  * For deployment see deployment guide
+
+  * Vue have hook and integration for tracking runtime errors
+  - see Sentry docs,
+
+  * When manipulating with route we should use router props like hash,
+    query, etc.
+
+  * For static content should use v-once directive, see docs
+
+  * Router-link can't use for redirect to different domain
+    location or blank
+
+  * Почитать CSS модули(vue loader)
+
+  * Пользовательские блоки документации
+  (vue loader, сборка в 1 файл) оформить документацию
+
+  * Инкапсулировать протокол. Сделать объект который будет переводить
+  поля из клиентских в серверные для запроса и обратно при ответе.
+
+  * В конце, после миграции, добавить post CSS
+  "autoprefixer": "^6.7.2", postcss-load-config, postcss-loader
+
+  ? Использовать vue-history-api-fallback - https://router.vuejs.org/ru/guide/essentials/history-mode.html
+   это нужно, чтобы не получить ошибку 404 при заходе на страницу user/id
+
+  ? Перед тем как грузить страницу signin проверить есть ли организация, если нет
+  редирект сделать до прогрузки страницы.(в роутере сделано)
+
+  * При изменении в настройках, если сервер ответит что-то не ОК
+  то на гуи изменения из хранилища сохраняются, надо как-то сообщить
+  (не сохранено - сервер не отвечает)
+  %
+
+  * Card пользователя и организации похожи, можно вынести загрузку картинки в
+  общий миксин
+
+  * Добавить возможность загружать нужный тикет по номеру в url,
+    например /ticket/3456, или через ?mid=3456
+
+  * Хранилища сейчас не очищаются полностью, если данные будут
+  перекрываться у разных пользователей - это не оч хорошо.
+
+  * В будущем необходим свой прокси сервер для oauth.
+
+  * Should tags have "#" ?
+
+  * Обновить i18n, single file component - блоки i18n
+
+  * Загрузка информации в драфты и тикеты похожа - унифицировать через функции установки состояния.
+
+  * в сайд баре нужно изменить построение списка по массиву
+  на построение по объекту, чтобы были гоорящие имена у элементов,
+  например tickets. - нужно поговорить с вовой по протоколу
+
+  * При создании нового аккаунта, если из старого не сделали logout
+  может перепутаться информация - либо делать для кажд пользователя
+  свое хранилище, либо при любом входе в том числе через подтверждение
+  делать зануление профиля.
+
+  * Просмотреть все циклы forEach у массивов, заменить по возможности на
+  filter + map
+
+  * Привести код в соответствие со style guide.
+
+  * В файлах assign/popup и status/popup дублируется код создания
+  объекта запроса, в случае разных страниц тикет или тикетс.
+
+  * Определиться как хранить строки, все в 1 папке в разных
+  файлах или в тех модулях и компонентах к которым они относятся.
+
+  * Проверить user/popup.vue и avatar.vue в user.vue - если
+  одинаковые, то объединить
+
+  * Как менять роль и емэйл например на странице профиля
+
+  * Объединить аватар и кнопку button user
+
+  * Разработать интерфейс для запросов на сервер, чтобы не зависеть
+  от конкретных названий полей.
+
+  * Список строк методов в хранилище vuex разбить по классам
+
+  * Принципиально продумать концепцию обработки ошибок,
+  выбрасывать ли исключения, логировать, продолжение работы.
+
+  * Убрать длинные имена в названиях, например с хранилищем.
+
+  * Везде где появилась функция store.clearSetDirty - проверить,
+  вероятно можно без clear, потенциальные ошибки.
+
+  * Посмотреть использование mixin subdomain в signin, применительно к
+  clearSetDirty. Видимо не доделал, дубль кода?
+
+  * Sidebar tickets - грузить число тикетов не по номерам массива,
+  изменить на объект с  говорящими полями.
+
+  * Все групповыe операции - назначить агента и приоритет - недоработаны.
+  логика после выполнения запроса не написана.
+
+  * Реализовать информационные уведомления для пользователя
+
+  * В entry/action.vue если организация неизвестна, нужно
+  сообщить ччерез уведомление а не просто логировать
+
+  * Реализовать сохранение и восстановление последней страницы,
+  на которой был пользователь.
+
+  * В будущем добавить LoginController по аналогии с ticket, чтобы
+  избавиться от emit msg.
+
+  * Страница org settings вылетает при попытке изменить что-то.
+
+  * В сайд баре в момент загрузки тикетов отключать возможность выбора нового списка тикетов,
+  чтобы человек не мог 3 раза кликнуть и в итоге получить на странице результат 3-х кликов
+  одним списком.
+
+  * Проверить
+  - oauth на тестовой машине.
+  - создание организации
+  - все action включая восстановление пароля
+  - работу всех файлов папки entry!
+  - работу draft, загрузку аттачменнтов
+  - при попытке загрузить картинку организаии сервер
+  возвращает authFailed
+  - Проверить создание заметки
+
+  * Разобраться с bundle analyzer
+
+  * почистить сборку( логику build, и скрипты файла npm) 
+
+  * Дублирование кода загрузки в draft и в контроллере ticket для comments, 
+    часть начальной загрузки данных. Подумать как и исправить.
+
+------------------------------
+  + Сделать так чтобы страницы типа create ticket
+    которые в начале ничего не отправляют не могли
+    загрузиться без аутентификации, в том числе если сервер не отвечает
+
+  + Router can load data before or after navigation
+
+  + On ticket page pictures loads too long.
+
+  + Validate pictures when upload.
+
+  + Изменить логику prod biuld. Убрать копирование через babel. 
+    Сборка дев и прод должна отличаться только аргументами для скриптов,
+    без дублирования кода или его копирования.
+    
+  + Переделать логику использования вычислимых свойств при объявлении объектов
+    - для файла protocol.js сделать файл с именами типа foo:foo.
+
+  + Загрузка клиента, любой страницы, должна начинаттся с проверки
+  домена, на каком мы находимся.
+
+  + Подумать как решить проблему передачи строковых имен
+  свойств протокола, хотелось бы передавать [prot.photo], например
+
+  + Хранилище пользователей-оптимизация загрузки пользователей.
+    Сделать объект - хранилище -
+    со свойствами для каждого пользователя, + хранение в
+    локальном хранилище. Загружать возможно каждого пользователя
+    1 раз при первой загрузке страницы (если св-во Null значит
+    грузим пользователя).
+
+  +У всех форм проверить поведение по умолчанию Если не обрабатывается 
+    submit - исправить, чтобы страница не перезагружаласью 
+  
+  + Rewrite vue-resource vue.js module in hdapi folder
+
+  + test and use vue-resource
+  
+  + Глянуть на vue-resource, может заменить все на него 
+
+  + Переработать контроллеры, добавить статические функции,
+  перераспределить функции между контроллерами
+
+  + Работу с Date в контроллере заменить на moment();
+
+  + Функцию обновления пользователей в хранилище после загрузки
+  убрать в контроллер, чтобы не дублировать везде, где нужно загрузить,
+  а потом обновить.
+
+  + Add ESLint or XO to project and check the code.
+
+  + In all promisses block add catch at the end.
+
+  + Код настроек организации нужно ппереписать,
+  добавить работу с хранилищем
+
+  + Переделать страницу профиля организации settings.vue
+    Шаблон, добавить работу с vuex org
+
+  + Валидацияя на страннице start не работает, вероятно
+  нужно хранилище. Флаг не сбрасывается в false после await
+
+  + user friendly date format for message create time on tickets page
+
+  + create adding message .vue component
+
+  + Перенести кот создаия аттачментов в собственный контроллер
+
+  + Хранидища драфтов тикетов и самих тикетов похожи - наследовать от общего объекта
+
+  + После перехода на vuex везде где требуется переписать взаимодействие
+  например - загрузка сообщений по фильтрам сейчас реализована через title,
+  обновление тикетов после assign агенту , и тд.
+
+  + в reply.vue чтоб не путаться различить this.store и this.$store
+
+  + на странице ticket сделать items не через refresh а через
+  хранилище
+
+  + обновление пользователейй вынести из tickets в контроллер, потому что
+  если нажать на сайдбар то не обновится в списке тикетов(не загрузится)
+
+  + В папке display переделать, убрать подпапки, класс base,
+  добавить функцию display, и 2 наследника
+
+  + Разделить хранилище ticket на tickets и comments + draft
+
+  + В плагине изменить название controller на ctrl;
+
+  # Read about component inheritance in vue
+
+  # What is event capture?
+
+  +# Vue router have ability to create pages for each user
+    like route/:id
+
+  # For all routes in Node when we render a page we can use
+    vue-history-api-fallback
+
+  # What should we display if organization doesn't have photo?
+  + Our logo, but it's not created yet.
+
+  +# In some components like creating org or sign in form should
+    take focus immediately with Focus directive - see docs
+
+  # Think about and implement request retrying mechanism
+
+  +# See all docs vue-i18n (e.g. fallback translation)
+
+  # Think about what we should do on "required auth" page
+    if server not answer such as ticket page and etc.
+
+  +# All "props" should be composed to objects and named.
+
+  # Refactor localization object. Think about independent from
+  project structure.
+
+  # Make auto update all lang files except main (en) file.
+
+  # In button change create text to submit text(en?).\
+
+  # How the "post" button should work? If popup pushed or
+  something else? If current user generally is agent
+  but in some ticket he is user - how can I display button.
+
+  +# See on new dynamic slots!
+  (Render in parent different types of list)
+
+  # Every ticket should have it's own store(f.e. text area)
+
+  # Comments in tickets.vue, ticket, popup, actions,
+  note, comment, reply, ticket should be implement
+
+  +# Need to implement component displaying strategy.
+  (In computed property go to pass data to some strategy
+    object)
+
+  +# Can we merge in one component all user preview icon?
+
+  +# In sidebar/list.vue use args object in props
+
+  +# Watch all lists and try to refactor logic such as
+  new buttons logic with slots. Especially see sidebar.
+
+  +# Add header h5 component. See sidebar.
+
+  + getSearchParams - в контроллере валидаторе заменить на
+  $route.query
+
+  - We should use named views instead of v-if for rendering differend
+      components on different routes. E.g. sidebar.vue,
+
+    + Add in readme app parameters(run config) for starting server
+
+  ****After update minor bugs and advises****:
+  + Header own and main - may be make one common header
+  + In localization en file added new section without ru section
+  + tickets.vue - strong text everywhere, should delete t-head
+  class for table items?
+  + Comments in /entry was helpful. Should take it from history svn
+  + /ticket/ popup.vue using logic
+  + In main.vue what is with router-view
+  + workspace centered not working ? (what exactly not working?)
+  + Common components popup and actions in common folder
+  ********************************************
+
+  + Выделить блок с oauth кнопками в отдельный файл, для использования
+    на 2-х страницах
+
+    + В протоколе (msg,org) убрать 2 разных вызова sendReq и sendPristineReq,
+    сделать функцию не с 2-мя аргументами а с 1-м - объектом, в него сразу
+    передавать объект с методом, использовать оператор { ..} при создании объекта
+
+    + На страницах (на всех точках входа) signin, upd-pass,
+    set-pass и т.д. - сделать загрузку  информации об организациях,
+    так как это точки входа
+
+  +# Need implement tags.vue and random color.
+
+  +# "slot" in .vue files need to use correct, now it is questionable
+    See FragmentInstance
+
+  +# test and use vue-validator
+
+  +# CSS from popup button should be moved to common container
+
+  +# Button create ticket - project, names mismatch
+
+  +# Make post button work.
+
+  +# What should I do when push on user icon in header? - nothing
+
+  +# Hidden comments work
+
+  +# Add js md5 implementation.
+
+  +# Class user icon dynamic or not ?
+
+  +# Add notes to ticket.vue, like comments
+
+  +# SignIn WITH *** not working
+
+  +# Look at new router redirecting in config (e.g. index->signin)
+
+  +# Add new comment logic, after deleting table template
+
+  +# localization default value ( problem in vue-i18n) - fallbackLang
+
+  +# According to new vue-loader we can delete template-html-loader
+  from package.json
+
+  +# For auth should use route meta fields instead of controller
+
+  +# Change containers with named views
+
+  +# .Vue files should be split on common logic(controller) and view logic for reusable
+  For example logic in cmn.js or logic in start and signup and create.org, or load user controller,
+  which is using in sidebar and tickets
+
+  +# Convert cmn.js or controller from singleton instance to class
+
+  +# Controllers should be add as plugin to vue object
+
+  +# extract css into a single file ( problem in vue-loader )
+
+  +# Try to Check user auth in router on transition ?
+
+  +# What we gonna do if organization is free when inter with subdomain in start page
+
+  +# - If user enter on start page with any valid domain redirect on signin
+    - If user enter on start page with any invalid domain, delete domain
+    - If user enter on signin page with invalid domain redirect on start page
+    - If user have more than 1 subdomain redirect on 404(may be nginx)
+
+  +# Need a way to know - is there exist user photo or not
+
+  +# On start page should validate domain. It can contain latin symbols,
+    numbers and '-','_'
+
+  +# Add page store. Merge page store with locale store and call state store
+
+  +# Merge entry vue and index vue
+
+  +# When input email and press enter - should focus on password
+
+  +# Progress event and cors, why not working?
+
+  +# Refactor start page. Use v-if instead of copy-paste??
+
+  +# one instance of vue-router or fix bug when change page
+
+  +# User component in header should display photo or color and abbr
+
+  +# Need mechanism for auto update component when page change through router
+
+  +# Refactor sign in, sign up, start page
+
+  +# Refactor login process
+
+  +# Update org store and profile store during login
+
+  +# Auto loading org photo, user photo, name after login
+
+  +# Add to org store "photo" field
+
+  +# Add set state functions to utils and org store
+
+  +# Add selecting form logic to create menu
+
+  +# Localize header as an example localization
+
+  +# Add new brand component
+
+  +# Add new header component
+
+  +# Add own header and brand component
+
+  +# Add create button with different forms, user and project
+
+  +# Add new user component
+
+  +# Move oid from cred store to org
+
+  +# Need correct users names display on vue component.
+
+  +# To add comment and ticket use ctrl+enter
+
+  +# Add customer and agent names to tickets page.
+
+  +# In stores int value should be parse from string
+
+  +# Add org photo and user photo in header
+
+  +# Refactor profile page. Use v-if instead of copy-past.
+
+  +# Review users storage on unexpected errors
+
+  +# Refactor ticket page
+
+  +# Add user names in localStorage
+
+  +# Add url helper to construct right formatted url
+
+  +# On profile page add loading picture
+
+  +# Add loading pictures on ticket page
+
+  +# Add loading name on ticket page
+
+  +# add window.onerror callback for logging non-vue-errors
+
+  +# Refactor copy-paste code in sidebar folder. Use v-if.
+
+  +# Rewrite hdapi section
+
+  +# All string values from express routes should
+      relocate in one file and use variable.
+
+  +# Use hello.js through npm
+
+  +# add server error logging on prod, and on dev. Need to check
+      environment (client or server). Think about how logger check
+      ENV on server
+
+  +# Use Error.stack
+
+  +# Refactor app.vue code section
+
+  +# Use npm-check (outdates)
+
+  +# add support refresh token
+
+  +# split userStore on cred and profile stores.
+
+  +# oauth should work in new window with fixed domain
+
+  +# make 2 different build - dev and prod.
+
+  +# On catch event in vue try to use simple es6 function definition
+    instead "abc":function()
+
+  +# Need to write correct error handling and logging
+    on server side and client side. It should different way
+    for handling and logging between development and production
+
+  +# use this in arrow function context ()=>{}
+
+  +# oauth not working/testing because of site test location
+
+  + Add 'bunyan' module for error logging.
+
+  + Make common callback function for client api calls.
+
+  + use singleton only if necessary. Rewrite all in folder hdApi.
+
+  + Make own vue plugin for client api
+
+  +# Can add hidden comments
+
+  +# show hidden comment
+
+  +# one time initial http client for server requests
+
+  +# rewrite code working with local storage. Now value could be overwritten.
+
+  +# create adding comment .vue component
+
+  +# create showing comments .vue component
+
+  +# if session timeout it needs redirect or show registration modal window
