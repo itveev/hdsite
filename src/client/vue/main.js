@@ -67,6 +67,7 @@ const App = Vue.extend(appVue);
 const vp = Vue.prototype;
 let firstAppLoadRoute = false;
 
+// TODO: Need refactoring !
 router.beforeEach((to, from, next) => {
   const fwd = function commitPathAndForward(obj) {
     const { path, page } = obj;
